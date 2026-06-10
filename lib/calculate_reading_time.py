@@ -9,6 +9,9 @@ Returns: an estimate, in minutes (int), of how long it takes to read the given t
 """
 def calculate_reading_time(text):
 
+    if not text:
+        raise Exception("Can't calculate reading time for empty text.")
+
     reading_time = math.ceil(len(text.split()) / 200)
 
     if reading_time > 1:

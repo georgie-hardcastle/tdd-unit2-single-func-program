@@ -1,4 +1,5 @@
 import random
+import pytest
 
 from lib.calculate_reading_time import calculate_reading_time
 
@@ -17,3 +18,9 @@ def test_calculate_reading_time_for_random_wds():
     result = calculate_reading_time(test_text)
     assert result == "It will take approximately 2365 minutes to read this text."
 
+def test_calculate_reading_time_throws_error_for_empty_text():
+    test_text = ""
+    with pytest.raises(Exception) as e:
+        calculate_reading_time(test_text)
+    error_message = str(e.value)
+    assert error_message == "Can't calculate reading time for empty text."
