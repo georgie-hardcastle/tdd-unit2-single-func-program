@@ -1,3 +1,5 @@
+import pytest
+
 from lib.make_snippet import make_snippet
 
 '''
@@ -21,3 +23,9 @@ The function should add '...' to the end of the truncated string.
 def test_make_snippet_adds_ellipsis_to_end_of_string():
     result = make_snippet("Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.")
     assert result == "Would I rather be feared..."
+
+def test_make_snippet_throws_error_for_empty_string():
+    with pytest.raises(Exception) as e:
+        make_snippet("")
+    error_message = str(e.value)
+    assert error_message == "Can't truncate an empty string!"
