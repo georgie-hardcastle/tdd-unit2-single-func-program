@@ -1,6 +1,12 @@
 # {{PROBLEM}} Function Design Recipe
 
-Copy this into a `recipe.md` in your project and fill it out.
+NOTE TO SELF: this function and its tests are currently working
+at a very basic level but to make it truly useful and cover
+all use cases we need to do more:
+
+- testing for sentences ending with non-alpha characters that are still invalid (commas, colons, etc)
+- implementing functionality that allows the function to see questions and add a question mark
+- general refactoring
 
 ## 1. Describe the Problem
 
